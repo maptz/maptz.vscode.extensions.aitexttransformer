@@ -1,0 +1,86 @@
+{
+  "name": "maptz.vscode.extensions.aitexttransformer",
+  "displayName": "AI Text Transformer",
+  "description": "Extension which uses AI to enhance the selected text.",
+  "repository": "https://github.com/maptz/maptz.vscode.extensions.aitexttransformer",
+  "icon": "resx/icon.png",
+  "publisher": "maptz",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": [
+      {
+        "id": "widgetSamples",
+        "title": "AI Text Transformer Settings",
+        "order": 2,
+        "properties": {
+          "aitexttransformer.apiKey": {
+            "type": "string",
+            "default": "",
+            "description": "The API key for the AI service."
+          },
+          "aitexttransformer.defaultFullPrompt": {
+            "type": "string",
+            "default": "Make the text following the --- {0}. Return only the revised text without the --- in your response and nothing else.\r\n---\r\n{1}",
+            "description": "The default full prompt to be used by the service to transform selection."
+          },
+          "aitexttransformer.defaultTransform": {
+            "type": "string",
+            "default": "more casual",
+            "description": "The default term used to complete the prompt."
+          },
+          "aitexttransformer.aiService": {
+            "type": "array",
+            "description": "The AI to use",
+            "default": "openAI",
+            "items": {
+              "type": "string",
+              "enum": [
+                "openAI"
+              ]
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "aitexttransformer.transformSelectedText",
+        "title": "Transform selected text (AI)"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/node-fetch": "^2.6.2",
+    "@types/vscode": "^1.76.0",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "@vscode/test-electron": "^2.2.3",
+    "eslint": "^8.34.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.9"
+  }
+}
