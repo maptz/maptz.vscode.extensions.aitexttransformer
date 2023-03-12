@@ -1,5 +1,5 @@
 {
-  "name": "maptz.vscode.extensions.aitexttransformer",
+  "name": "aitexttransformer",
   "displayName": "AI Text Transformer",
   "description": "Extension which uses AI to enhance the selected text.",
   "repository": "https://github.com/maptz/maptz.vscode.extensions.aitexttransformer",
