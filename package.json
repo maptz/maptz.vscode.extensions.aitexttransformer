@@ -3,7 +3,7 @@
   "displayName": "AI Text Transformer",
   "description": "Uses AI to enhance the selected text.",
   "repository": "https://github.com/maptz/maptz.vscode.extensions.aitexttransformer",
-  "icon": "resx/icon.png",
+  "icon": "https://raw.githubusercontent.com/maptz/maptz.vscode.extensions.aitexttransformer/main/resx/icon.png",
   "publisher": "maptz",
   "version": "0.0.1",
   "engines": {
